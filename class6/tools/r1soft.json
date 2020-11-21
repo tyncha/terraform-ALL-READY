@@ -2,7 +2,6 @@
     "builders": [
       {
         "type": "amazon-ebs",
-        "region": "{{user `region`}}",
         "source_ami_filter": {
             "filters": {
                 "virtualization-type": "hvm",
@@ -14,9 +13,8 @@
             },
         "instance_type": "t2.micro",
         "ssh_username": "centos",
-        "ssh_keypair_name": "packer_bastion",
-        "ssh_private_key_file": "~/.ssh/id_rsa",
-        "ami_name": "packer-example {{timestamp}}"
+        "region": "us-east-1",
+        "ami_name": "r1soft-example {{timestamp}}"
       }
     ],
     "provisioners": [
