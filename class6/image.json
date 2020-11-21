@@ -3,7 +3,7 @@
       {
         "type": "amazon-ebs",
         "region": "us-east-1",
-        "source_ami": "ami-02eac2c0129f6376b",
+        "source_ami": "ami-01e36b7901e884a10",
         "instance_type": "t2.micro",
         "ssh_username": "centos",
         "ami_name": "packer-example {{timestamp}}"
