@@ -1,15 +1,14 @@
 resource "aws_db_instance" "default" {
-	identifier = "dbname"
-	allocated_storage = 20
+	identifier = "${var.db_name}"
+	allocated_storage = "${var.allocated_storage}"
 	storage_type = "gp2"
-	engine = "mysql"
-	engine_version = "5.7"
-	instance_class = "db.t2.micro"
-	name = "mydb"
-	username = "foo"
-	password = "foobarbaz"
+	engine = "${var.engine}"
+	engine_version = "${var.engine_version}"
+	instance_class = "${var.instance_class}"
+	username = "${var.username}"
+	password = "${var.password}"
 	parameter_group_name = "default.mysql5.7"
-	publicly_accessible = true
+	publicly_accessible = "${var.publicly_accessible}"
 	db_subnet_group_name = "${aws_db_subnet_group.db.name}"
 	skip_final_snapshot = true #used to delete the repo in the future without this you cant delete. There are bugs reported 
 	vpc_security_group_ids = ["${aws_security_group.db.id}"]
