@@ -2,7 +2,7 @@
 variable "cluster_name" {} 
 variable "cluster_version" {}
 variable "subnets" {
-    type = "list"
+    type = list
 }
 variable "vpc_id" {}
 variable "instance_type" {}
