@@ -4,7 +4,7 @@ eks.tf
 # .tfstate files
 *.tfstate
 *.tfstate.*
-
+regions
 # Crash log files
 crash.log
 
