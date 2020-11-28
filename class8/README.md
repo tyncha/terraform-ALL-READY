@@ -59,8 +59,8 @@ output "workers_asg_names" {
 ```
 cluster_name                                    = "my-cluster"
 cluster_version                                 = "1.14"
-subnets                                         = ["subnet-09e046e79485b9194", "subnet-0d27bd3f9c6a10988", "subnet-0533f931432ff4966"]
-vpc_id                                          = "vpc-06efdc7384e6bc939"
+subnets                                         = ["subnet-00000", "subnet-00000", "subnet-00000"]
+vpc_id                                          = "vpc-0000000000"
 instance_type                                   = "m4.large"
 asg_max_size                                    = 5
 asg_min_size                                    = 1
