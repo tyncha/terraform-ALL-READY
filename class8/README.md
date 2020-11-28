@@ -1,1 +1,68 @@
-# terraform-iaac-august-2020
+# This module creates EKS on multiple region
+
+### Copy paste below code 
+```
+data "aws_eks_cluster" "cluster" {
+  name = module.my-cluster.cluster_id
+}
+
+data "aws_eks_cluster_auth" "cluster" {
+  name = module.my-cluster.cluster_id
+}
+
+provider "kubernetes" {
+  host = data.aws_eks_cluster.cluster.endpoint
+  cluster_ca_certificate = base64decode(data.aws_eks_cluster.cluster.certificate_authority.0.data)
+  token = data.aws_eks_cluster_auth.cluster.token
+  load_config_file = false
+  version = "~> 1.9"
+}
+
+module "my-cluster" {
+  source = "terraform-aws-modules/eks/aws"
+  version = "12.0.0"
+  cluster_name = "${var.cluster_name}"
+  cluster_version = "${var.cluster_version}"
+  subnets = "${var.subnets}"
+  vpc_id = "${var.vpc_id}"
+  worker_groups = [{
+    instance_type = "${var.instance_type}"
+    asg_max_size = "${var.asg_max_size}"
+	asg_min_size = "${var.asg_min_size}"
+    }
+  ]
+}
+
+```
+### Copy paste to output file 
+
+```
+output "cluster_id" {
+	value = "${module.my-cluster.cluster_id}"
+}
+output "cluster_arn" {
+	value = "${module.my-cluster.cluster_arn}"
+}
+output "cluster_version" {
+	value = "${module.my-cluster.cluster_version}"
+}
+output "cluster_security_group_id" {
+	value = "${module.my-cluster.cluster_security_group_id}"
+}
+output "workers_asg_names" {
+	value = "${module.my-cluster.workers_asg_names}"
+}
+```
+
+
+### Terraform code takes values. Provide those
+```
+cluster_name                                    = "my-cluster"
+cluster_version                                 = "1.14"
+subnets                                         = ["subnet-09e046e79485b9194", "subnet-0d27bd3f9c6a10988", "subnet-0533f931432ff4966"]
+vpc_id                                          = "vpc-06efdc7384e6bc939"
+instance_type                                   = "m4.large"
+asg_max_size                                    = 5
+asg_min_size                                    = 1
+region                                          = "us-east-2"
+```
