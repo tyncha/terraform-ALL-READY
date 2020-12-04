@@ -14,8 +14,8 @@ variable "vm_size" {}
 variable "publisher" {}
 variable "sku" {}
 variable "offer" {}
-variable "version" {}
 variable "admin_username" {}
-variable  "tags" {
-	type = "map"
+
+variable "tags" {
+  type = "map"
 }
