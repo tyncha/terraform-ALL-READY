@@ -9,7 +9,7 @@ resource "azurerm_virtual_machine" "vm1" {
     publisher = "${var.publisher}"
     offer     = "${var.offer}"
     sku       = "${var.sku}"
-    version   = "latest"
+    version   = "${var.os_version}"
   }
 
   storage_os_disk {
@@ -43,7 +43,7 @@ resource "azurerm_virtual_machine" "vm2" {
     publisher = "${var.publisher}"
     offer     = "${var.offer}"
     sku       = "${var.sku}"
-    version   = "latest"
+    version   = "${var.os_version}"
   }
 
   storage_os_disk {
@@ -81,7 +81,7 @@ resource "azurerm_virtual_machine" "vm3" {
     publisher = "${var.publisher}"
     offer     = "${var.offer}"
     sku       = "${var.sku}"
-    version   = "latest"
+    version   = "${var.os_version}"
   }
 
   storage_os_disk {
