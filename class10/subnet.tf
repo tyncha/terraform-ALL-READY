@@ -10,7 +10,6 @@ resource "azurerm_subnet" "private2" {
   resource_group_name = "${var.resource_group_name}"
   virtual_network_name = "${azurerm_virtual_network.vnet1.name}"
   address_prefix = "${var.private_subnet2_range}"
-
 }
 
 resource "azurerm_subnet" "private3" {
