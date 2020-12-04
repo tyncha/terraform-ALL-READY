@@ -20,6 +20,7 @@ module "three_tier" {
   version        = "latest"
   admin_username = "centos"
   vm_size        = "Standard_DS1_v2"
+  os_version     = "latest"
 
   tags = {
     Name        = "VPC_Project"
