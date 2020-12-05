@@ -9,4 +9,5 @@ module "ss" {
     subnet_name             = var.subnet_name
     address_space           = var.address_space
     vpc_name                = var.vpc_name 
+    address_prefixes        = var.address_prefixes
 }
