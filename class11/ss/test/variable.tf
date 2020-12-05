@@ -5,8 +5,12 @@ variable "admin_username" {}
 variable "instances" {}
 variable "sku" {}
 variable "address_prefixes" {
-    type = list
+  type = list
 }
 variable "subnet_name" {}
 variable "address_space" {}
 variable "vpc_name" {}
+variable "publisher" {}
+variable "offer" {}
+variable "os_sku" {}
+variable "os_version" {}

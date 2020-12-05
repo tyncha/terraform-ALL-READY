@@ -8,9 +8,9 @@ variable "username" {}
 variable "password" {}
 variable "publicly_accessible" {}
 variable "subnet_ids" {
-type = "list"
+  type = "list"
 }
 variable "allowed_hosts" {
-type = "list"
+  type = "list"
 }
 variable "allocated_storage" {}

@@ -3,7 +3,7 @@ module "three_tier" {
   private_subnet1_range = "10.0.1.0/24"
   private_subnet2_range = "10.0.2.0/24"
   private_subnet3_range = "10.0.3.0/24"
-  resource_group_name   = "dev"         #Precreate this while creating Backend Container
+  resource_group_name   = "dev" #Precreate this while creating Backend Container
   security_group_name   = "sec_group1"
   vm1_computername      = "vm1"
   vm2_computername      = "vm2"

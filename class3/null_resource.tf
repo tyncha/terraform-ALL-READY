@@ -1,14 +1,14 @@
 resource "null_resource" "remote" {
-   triggers = {
+  triggers = {
     always_run = "${timestamp()}"
-    }   
+  }
   provisioner "remote-exec" {
     connection {
-    type     = "ssh"
-    user     = "ubuntu"
-    private_key = "${file("~/.ssh/id_rsa")}"
-    host     = "${aws_instance.provisioner.public_ip}"
-  }
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = "${file("~/.ssh/id_rsa")}"
+      host        = "${aws_instance.provisioner.public_ip}"
+    }
     inline = [
       "sudo apt-get install apache2 -y",
       "sudo systemctl start apache2",

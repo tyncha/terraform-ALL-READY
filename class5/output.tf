@@ -27,5 +27,5 @@ output "public_subnet3" {
 }
 
 output "tags" {
-    value = "${var.tags}"
+  value = "${var.tags}"
 }
