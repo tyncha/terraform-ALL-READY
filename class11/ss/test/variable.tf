@@ -4,9 +4,7 @@ variable "ss_name" {}
 variable "admin_username" {}
 variable "instances" {}
 variable "sku" {}
-variable "address_prefixes" {
-  type = list
-}
+variable "address_prefixes" {}
 variable "subnet_name" {}
 variable "address_space" {}
 variable "vpc_name" {}
