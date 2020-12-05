@@ -11,11 +11,6 @@ variable "subnet_name" {}
 variable "address_space" {}
 variable "vpc_name" {}
 
-publisher = var.publisher
-offer     = var.offer
-sku       = var.os_sku
-version   = var.version
-
 variable "publisher" {}
 variable "offer" {}
 variable "os_sku" {}
