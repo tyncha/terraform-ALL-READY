@@ -1,17 +1,17 @@
 module "ss" {
-  source                  = "../"
-  resource_group_name     = var.resource_group_name
-  resource_group_location = var.resource_group_location
-  ss_name                 = var.ss_name
-  admin_username          = var.admin_username
-  instances               = var.instances
-  sku                     = var.sku
-  subnet_name             = var.subnet_name
-  address_space           = var.address_space
-  vpc_name                = var.vpc_name
-  address_prefixes        = var.address_prefixes
-  publisher               = var.publisher
-  offer                   = var.offer
-  os_sku                  = var.os_sku
-  os_version              = var.os_version
+    source                  = "../"
+    resource_group_name     = "example-resources"
+    resource_group_location = "West Europe"
+    ss_name                 = "example-ss"
+    admin_username          = "admin"
+    instances               = 1
+    sku                     = "Standard_F2"
+    address_prefixes        = ["10.0.2.0/24"]
+    subnet_name             = "subnet1"
+    address_space           = ["10.0.0.0/16"]
+    vpc_name                = "example1"
+    publisher               = "Canonical"
+    offer                   = "UbuntuServer"
+    os_sku                  = "16.04-LTS"
+    os_version              = "latest"
 }
