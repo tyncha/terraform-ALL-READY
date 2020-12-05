@@ -2,9 +2,9 @@ resource "azurerm_linux_virtual_machine_scale_set" "example" {
   name                = var.ss_name
   resource_group_name = azurerm_resource_group.example.name
   location            = azurerm_resource_group.example.location
-  sku                 = "Standard_F2"
-  instances           = 1
-  admin_username      = "adminuser"
+  sku                 = var.sku
+  instances           = var.instances
+  admin_username      = var.admin_username
 
   admin_ssh_key {
     username   = "adminuser"
