@@ -1,6 +1,7 @@
 # Local .terraform directories
 **/.terraform/*
 class12
+class12/*
 # .tfstate files
 *.tfstate
 *.tfstate.*
