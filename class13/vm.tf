@@ -13,7 +13,7 @@ resource "google_compute_instance" "vm_instance" {
 	}
     metadata_startup_script = "${file("userdata.sh")}"
     metadata = {
-		ssh-keys = "debian:${file("~/.ssh/id_rsa.pub")}"
+		ssh-keys = "debian:${file("~/.ssh/id_rsa.pub")}sam:${file("~/.ssh/id_rsa.pub")}"
 	}
 
 
