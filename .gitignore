@@ -2,6 +2,7 @@
 **/.terraform/*
 class12
 class12/*
+class12/
 # .tfstate files
 *.tfstate
 *.tfstate.*
